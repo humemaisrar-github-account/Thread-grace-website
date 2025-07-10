@@ -31,7 +31,7 @@ const ContactSection = () => {
            <input
             type="hidden"
             name="_next"
-            value="https://threaded-grace.vercel.app/thankpage"
+            value="https://thread-grace-website.vercel.app/thankpage"
          />
 
 
