@@ -21,7 +21,7 @@ const ContactSection = () => {
         </p>
 
         <motion.form
-          action="https://formsubmit.co/b42fc06bc451124fd3a0587ebf6b07d3"
+          action="https://formsubmit.co/humema.israr09@gmail.com"
           method="POST"
           whileHover={{ scale: 1.01 }}
           className="contact-form"
