@@ -1,0 +1,561 @@
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(179, 202, 201);
+  color: rgb(0, 0, 0);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(212, 165, 210);
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Header */
+.header {
+  background-color: rgb(149, 202, 193);
+  color: rgb(252, 252, 252);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .log {
+  font-size: 35px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgb(5, 85, 122);
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
+.header .nav a {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgb(131, 177, 179);
+}
+
+.header .nav a:hover {
+  color: black;
+}
+
+/* Footer */
+/* ======= Footer Styles (Horizontal Layout) ======= */
+.footer {
+  background-color: rgb(136, 176, 221);
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-shadow: 2px 2px 5px rgb(15, 86, 134);
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-brand,
+.footer-links,
+.footer-bottom {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-brand h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgb(122, 5, 64);
+}
+
+.footer-brand p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgb(131, 177, 179);
+}
+
+.footer-links a:hover {
+  color: black;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+ 
+
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 60px;
+  color: rgb(181, 199, 216);
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero h1, .hero h2 {
+  font-size: 50px;
+  text-shadow: 2px 2px 5px rgb(172, 46, 109);
+}
+
+.hero h2 {
+  color: rgb(211, 77, 144);
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color:  rgb(94, 165, 206);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 2px 2px 5px rgb(119, 96, 33);
+  color: white;
+}
+
+.hero button:hover {
+  background-color: rgb(206, 94, 172);
+  color: black;
+}
+
+/* About Section */
+ 
+.about {
+  padding: 100px 100px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px; /* ✅ This adds space between the two boxes */
+  flex-wrap: wrap; /* ✅ Makes it responsive by allowing wrapping on smaller screens */
+  height: auto; /* ✅ Remove fixed height for better responsiveness */
+}
+
+
+.abcn  {
+  max-width: 520px;
+  text-align: left;
+  padding: 40px;
+  border-radius: 15px;
+  flex: 1 1 300px; /* ✅ Flex-grow, shrink, and basis for responsiveness */
+background: rgb(255, 255, 255)
+}
+.abc {
+  max-width: 520px;
+  text-align: left;
+  padding: 40px;
+  border-radius: 15px;
+  flex: 1 1 300px; /* ✅ Flex-grow, shrink, and basis for responsiveness */
+   
+}
+ 
+
+.abc p {
+  padding-top: 20px;
+}
+.abcn p {
+  padding-top: 20px;
+}
+
+.head {
+  font-size: 35px;
+  font-style: italic;
+  text-shadow: 2px 2px 5px rgb(103, 151, 190);
+}
+
+/* Romal Section */
+.romal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.romalcard {
+  background-color: rgb(168, 207, 214);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(63, 120, 185);
+  text-align: center;
+}
+
+.romalcard img {
+  width: 100%;
+  height: 300px; /* Ensures all images have the same height */
+  object-fit: cover; /* Crops the image to fit within the container */
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.romalcard img:hover {
+  transform: scale(0.9); /* Shrink to 90% size */
+}
+ 
+.romalcard h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.romalcard div {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+ 
+
+.romalcard button {
+  background-color: rgb(172, 107, 46);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  border-spacing: 5px;
+    
+
+  
+}
+
+.romalcard button:hover {
+  background-color: rgb(160, 132, 40);
+  color: black;
+  font-weight: bold;
+}
+ 
+/* contact page */
+/* Container & section */
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 1.5rem 5rem 1.5rem; /* py-20 px-6 */
+  box-sizing: border-box;
+}
+
+ 
+
+.container {
+  max-width: 80rem; /* max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading */
+.contact-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #80cceb, #599b8a, #c47998); /* from-purple-400 to-pink-600 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Paragraph */
+.contact-description {
+  text-align: center;
+  color: #000000; /* gray-400 */
+  font-size: 1.125rem; /* text-lg */
+  margin-bottom: 2.5rem; /* mb-10 */
+  max-width: 42rem; /* max-w-xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Form */
+.contact-form {
+  background-color: rgba(69, 139, 148, 0.5); /* bg-[#1c1c1c]/50 */
+  backdrop-filter: blur(8px); /* backdrop-blur-md */
+  border: 1px solid #33353f;
+  border-radius: 1rem; /* rounded-xl */
+  padding: 2.5rem 2.5rem; /* p-10 */
+  box-shadow: 0 10px 15px rgba(48, 98, 107, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+}
+
+/* Form Row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+ 
+
+/* Inputs */
+.input-field {
+  background-color: #f6feff;
+  color: #000000;
+  border: 1px solid #4b5563; /* gray-600 */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #9ca3af; /* placeholder-gray-400 */
+}
+
+.input-field:focus {
+  border-color: #48a2ec; /* focus:ring-pink-500 */
+  box-shadow: 0 0 0 2px #48b8ec;
+}
+
+/* Full width input */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Textarea */
+.textarea-field {
+  background-color: #ffffff;
+  color: #0c0c0c;
+  border: 1px solid #6cb8cf;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+  width: 100%;
+  font-family: inherit;
+}
+
+.textarea-field::placeholder {
+  color: #ffffff;
+}
+
+.textarea-field:focus {
+  border-color: #48b0ec;
+  box-shadow: 0 0 0 2px #48b8ec;
+}
+
+/* Button */
+.submit-button {
+  width: 100%;
+  background: linear-gradient(90deg, #55d7f7, #ecc648);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  padding: 0.75rem 0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(168, 85, 247, 0.5);
+  transition: opacity 0.2s ease;
+  border: none;
+}
+
+.submit-button:hover {
+  opacity: 0.9;
+}
+
+/* ==== Thank You Page Styles ==== */
+
+.thank-container {
+  min-height: 100vh;
+  background-color: white;
+  color: #4a4a4a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.thank-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #87ceeb, #d8a374, #f8a3c6); /* Light blue, brown, pink */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+ 
+
+.thank-message {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.thank-link {
+  background: linear-gradient(to right, #87ceeb, #f8a3c6); /* light blue to pink */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(136, 176, 221, 0.3);
+}
+
+.thank-link:hover {
+  opacity: 0.9;
+  color: #000;
+  background: #f8a3c6;
+}
+ 
+/* responsive style */
+
+@media (max-width: 760px) {
+  /* Header */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .header .log {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .header .nav {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .hero button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  /* About Section */
+  .about {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .abcn {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  /* Ring Section */
+  .romal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .romalcard img {
+    height: 250px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .footer-brand,
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer {
+    padding: 30px 10px;
+  }
+
+  /* Contact Form */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .submit-button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  .abcn, .abc {
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+}
+
+}
+
