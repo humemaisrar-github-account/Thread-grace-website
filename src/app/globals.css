@@ -1,0 +1,421 @@
+/* ======= Global Variables ======= */
+:root {
+  --primary-color: #d48166; /* Rose Gold / Warm Terracotta */
+  --primary-hover: #bf7157;
+  --secondary-color: #2c3e50; /* Deep Slate / Navy */
+  --bg-color: #f8fbfb; /* Soft Off-White / Mint Whisper */
+  --white: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --shadow: 0 10px 30px rgba(0,0,0,0.05);
+  --header-bg: #ffffff;
+  --footer-bg: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* ======= Reusable Components ======= */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 129, 102, 0.3);
+}
+
+/* ======= Header ======= */
+.header {
+  background-color: var(--header-bg);
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header .log {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+/* ======= Hero Section ======= */
+.hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.2); /* Soft overlay for text readability */
+}
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.hero .p1 {
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.hero button {
+  margin-top: 2rem;
+  /* Reusing btn-primary logic via manual style for now since it's a direct tag */
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 15px 40px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ======= Shop / Product Cards ======= */
+.romal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 10%;
+}
+
+.romalcard {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.romalcard:hover {
+  transform: translateY(-10px);
+}
+
+.romalcard img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.romalcard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.romalcard div {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.romalcard button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.romalcard .add-to-cart {
+  background: var(--primary-color);
+  color: white;
+}
+
+.romalcard .buy-now {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.romalcard button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* ======= About Section ======= */
+.about {
+  padding: 80px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.abcn {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.head {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+/* ======= Footer ======= */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--white);
+  padding: 80px 10% 40px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 50px;
+}
+
+.footer-brand h2 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 50px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ======= Responsiveness ======= */
+@media (max-width: 1024px) {
+  .hero h2 { font-size: 3rem; }
+  .about { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 15px 20px; flex-direction: column; gap: 15px; }
+  .nav { gap: 15px; }
+  .hero { height: auto; padding: 100px 5%; text-align: center; }
+  .hero h2 { font-size: 2.5rem; }
+  .footer-container { grid-template-columns: 1fr; text-align: center; }
+  .footer-links { align-items: center; }
+}
+
+/* Contact Specific Overrides (Matching Global) */
+.contact-info-card, .contact-form {
+  box-shadow: var(--shadow);
+}
+
+/* contact page - specific styles */
+.contact-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5rem 10%;
+  background-color: var(--bg-color);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info-card {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-info-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.contact-info-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  margin-bottom: 1.5rem;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  margin-bottom: 0;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.input-field, .textarea-field {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.875rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.input-field:focus, .textarea-field:focus {
+  border-color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(212, 129, 102, 0.1);
+  outline: none;
+}
+
+.submit-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: var(--primary-hover);
+}
+
+/* Responsive adjustments for Contact */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
