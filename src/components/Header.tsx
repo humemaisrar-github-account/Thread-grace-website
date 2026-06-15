@@ -20,7 +20,6 @@ const Header = () => {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/shop">Embroidery</Link>
-            <Link href="/beauty" style={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>Beauty Store</Link>
             <Link href="/contact">Contact</Link>
             <Link href="/checkout" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
               <PiShoppingCartSimpleFill  style={{fontSize: "25px", color: "var(--primary-color)" }}/>
