@@ -8,7 +8,7 @@ const beautyProducts = [
     id: 101,
     name: "Rose Glow Serum",
     price: 850,
-    image: "/r1.webp", // Hum placeholder images use karenge ya aap baad mein change kar sakti hain
+    image: "/r1.webp",
     description: "Hydrating serum for a natural radiant glow."
   },
   {
@@ -52,29 +52,29 @@ const BeautyShop = () => {
   const { addToCart } = useCart();
 
   return (
-    <section className="shop-section" style={{ backgroundColor: '#fff9f9' }}>
-      <div className="container">
-        <h2 className="shop-title" style={{ color: '#d48166' }}>Beauty Collection</h2>
-        <p className="shop-description">Enhance your natural beauty with our premium cosmetics.</p>
-        <div className="shop-grid">
+    <section className="shop-section" style={{ padding: '80px 10%' }}>
+      <div className="container" style={{ textAlign: 'center' }}>
+        <h2 className="shop-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--secondary-color)' }}>Beauty Collection</h2>
+        <p className="shop-description" style={{ fontSize: '1.2rem', color: 'var(--text-light)', marginBottom: '3rem' }}>Enhance your natural beauty with our premium, curated cosmetics.</p>
+        <div className="romal" style={{ padding: '0', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}>
           {beautyProducts.map((product) => (
-            <div key={product.id} className="shop-card" style={{ border: '1px solid #fce4ec' }}>
-              <div className="shop-image-wrapper">
+            <div key={product.id} className="romalcard" style={{ border: '1px solid #eee', borderRadius: '1rem' }}>
+              <div className="shop-image-wrapper" style={{ position: 'relative', height: '250px', width: '100%', marginBottom: '1rem' }}>
                 <Image
                   src={product.image}
                   alt={product.name}
-                  layout="fill"
-                  objectFit="cover"
-                  className="shop-image"
+                  fill
+                  style={{ objectFit: 'cover', borderRadius: '0.8rem' }}
                 />
               </div>
               <div className="shop-info">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-category" style={{color: '#d48166'}}>{product.description}</p>
-                <p className="product-price">Rs {product.price}</p>
+                <h3 className="product-name" style={{ fontSize: '1.4rem', marginBottom: '0.5rem' }}>{product.name}</h3>
+                <p className="product-category" style={{ color: 'var(--text-light)', fontSize: '0.95rem', marginBottom: '1rem' }}>{product.description}</p>
+                <p className="product-price" style={{ fontWeight: '700', color: 'var(--primary-color)', fontSize: '1.2rem', marginBottom: '1.5rem' }}>Rs {product.price}</p>
                 <button
                   onClick={() => addToCart(product)}
-                  className="add-to-cart"
+                  className="btn-primary"
+                  style={{ width: '100%', padding: '12px' }}
                 >
                   Add to Cart
                 </button>
