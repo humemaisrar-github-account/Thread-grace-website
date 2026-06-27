@@ -25,7 +25,7 @@ A premium, fully responsive e-commerce platform dedicated to the art of handcraf
 First, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/Fatimahnoman/The-Embroidery-Atelier.git
+git clone https:/https://github.com/humemaisrar-github-account/Thread-grace-website.git
 cd The-Embroidery-Atelier
 npm install
 ```
