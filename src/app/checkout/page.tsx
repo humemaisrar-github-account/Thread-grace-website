@@ -77,12 +77,29 @@ const CheckoutPage = () => {
 
   if (cart.length === 0) {
     return (
-      <div className="thank-container">
-        <h2 className="thank-title">Your Cart is Empty</h2>
-        <p className="thank-message">Please add some items to your cart before checking out.</p>
-        <button onClick={() => router.push('/shop')} className="thank-link" style={{border: 'none', cursor: 'pointer'}}>
-          Go to Shop
-        </button>
+      <div className="contact-section" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+        <div style={{
+          backgroundColor: 'white',
+          padding: '40px',
+          borderRadius: '1.5rem',
+          boxShadow: 'var(--shadow)',
+          textAlign: 'center',
+          maxWidth: '500px',
+          width: '100%'
+        }}>
+          <div style={{ fontSize: '4rem', marginBottom: '20px' }}>🛒</div>
+          <h2 style={{ color: 'var(--secondary-color)', fontSize: '2.2rem', marginBottom: '15px' }}>Your Cart is Empty</h2>
+          <p style={{ color: 'var(--text-light)', fontSize: '1.1rem', marginBottom: '25px', lineHeight: '1.6' }}>
+            Please add some items to your cart before checking out.
+          </p>
+          <button 
+            onClick={() => router.push('/shop')} 
+            className="btn-primary"
+            style={{ width: 'auto', padding: '12px 35px', borderRadius: '50px', cursor: 'pointer', border: 'none' }}
+          >
+            Go to Shop
+          </button>
+        </div>
       </div>
     );
   }
