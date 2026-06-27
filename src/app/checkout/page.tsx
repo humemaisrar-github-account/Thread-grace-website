@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { useRouter } from "next/navigation";
 import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
@@ -7,6 +7,73 @@ import { FaTrash, FaPlus, FaMinus } from "react-icons/fa";
 const CheckoutPage = () => {
   const { cart, totalPrice, clearCart, updateQuantity, removeFromCart } = useCart();
   const router = useRouter();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const data: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      data[key] = value.toString();
+    });
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/humemaisrarali@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        clearCart();
+      } else {
+        setErrorMessage("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setErrorMessage("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="contact-section" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+        <div style={{
+          backgroundColor: 'white',
+          padding: '40px',
+          borderRadius: '1.5rem',
+          boxShadow: 'var(--shadow)',
+          textAlign: 'center',
+          maxWidth: '500px',
+          width: '100%'
+        }}>
+          <div style={{ fontSize: '4rem', marginBottom: '20px' }}>💌</div>
+          <h2 style={{ color: 'var(--primary-color)', fontSize: '2.2rem', marginBottom: '15px' }}>Thank You!</h2>
+          <p style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '25px', lineHeight: '1.6' }}>
+            Your order has been placed successfully. I’ll get back to you soon!
+          </p>
+          <button 
+            onClick={() => router.push('/shop')} 
+            className="submit-button"
+            style={{ width: 'auto', padding: '10px 30px', borderRadius: '50px', cursor: 'pointer' }}
+          >
+            Go back to Shop
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (cart.length === 0) {
     return (
@@ -78,12 +145,10 @@ const CheckoutPage = () => {
 
           {/* Checkout Form */}
           <form 
-            action="https://formsubmit.co/humemaisrarali@gmail.com" 
-            method="POST"
+            onSubmit={handleSubmit}
             className="contact-form"
           >
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://the-embroidery-atelier.vercel.app/thankpage" />
             
             <input 
               type="hidden" 
@@ -97,8 +162,14 @@ const CheckoutPage = () => {
             <input type="text" name="phone" placeholder="Phone Number" required className="input-field" />
             <textarea name="address" placeholder="Shipping Address" rows={4} required className="textarea-field" style={{color: 'black'}}></textarea>
 
-            <button type="submit" className="submit-button">
-              Place Order (COD)
+            {errorMessage && (
+              <p style={{ color: 'red', fontSize: '0.9rem', margin: 0 }}>
+                {errorMessage}
+              </p>
+            )}
+
+            <button type="submit" className="submit-button" disabled={isSubmitting}>
+              {isSubmitting ? "Placing Order..." : "Place Order (COD)"}
             </button>
           </form>
         </div>
